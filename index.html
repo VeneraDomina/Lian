@@ -1,106 +1,98 @@
 <!Doctype HTML>
-<html>
+<html lang='zxx'>
 <head>		
 	<title>LIAN</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel='stylesheet' href='stylesheets/css/font-awesome.min.css'>
-	<link rel='stylesheet' href='stylesheets/lian.css'>
-	<link rel='stylesheet' href='stylesheets/lianMedia.css'>
+	<link rel='stylesheet' href='stylesheets/style.css'>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	
 </head>
 <body>
-        <div class='header'>
-            <div class='header-container container'>
-                <a href='index.html' class='logo-link'><img src='images/logo.png' alt='LIAN' class='logo'></a>
-                   <div id='menu1' class='header-navigation'>
-                    <a href='#' class='menu-link'><i class="fa fa-bars"></i></a>
-                    <ul class='navigation visiable-header'>
-                        <li class='navigation-item'><a href='index.html' class='navigation-link'>HOME</a></li>
-                        <li class='navigation-item'><a href='' class='navigation-link'>ABOUT</a></li>
-                        <li class='navigation-item'><a href='templates/portfolioLian.html' class='navigation-link'>PORTFOLIO</a></li>
-                        <li class='navigation-item'><a href='' class='navigation-link'>BLOG</a></li>
-                        <li class='navigation-item'><a href='' class='navigation-link'>CONTACT</a></li>
-                        <li class='navigation-item'>
-                            <form class='navigation-search'>
-                               <!-- <i class="fa fa-search"></i>-->
-                                <input type='search' placeholder='&#xF002;' style='font-family:Open Sans, FontAwesome' class='search-field' >
-                            </form>
-                        </li>
-                    </ul>
-                    <div class="shadow"></div>
-                </div>  
-            </div>
-        </div>
-        
-        <div class='heading'>
-            <div class='heading-container container'>
-                <div class='heading-about'>
-                   <h1>ABOUT THE AGENCY</h1>
-                   <h3>WELCOME TO LIAN</h3>
+        <header>
+           <div class='logo'>
+               <a href='index.html'><img src='images/logo.png' alt='Lian'></a>
+           </div>
+           <nav id='menu'>
+               <a class='touch-menu fa fa-bars'></a>
+               <ul class='menu-list'>
+                   <li class='menu-item'><a href='index.html'>Home</a></li>
+                   <li class='menu-item'><a href='#'>About</a></li>
+                   <li class='menu-item'><a href='templates/portfolio.html'>Portfolio</a></li>
+                   <li class='menu-item'><a href='#'>Blog</a></li>
+                   <li class='menu-item'><a href='#'>Contact</a></li>
+                   <li class='menu-item'>
+                       <form action='#' id='search'>
+                           <input type='search' class='search'>
+                           <input type ='submit' value='&#xF002;' style='font-family:Open Sans, FontAwesome'>
+                       </form>
+                   </li>
+               </ul>
+           </nav>
+        </header>
+        <main>
+            <section class='heading'>
+               <div class='heading-title'>
+                   <h1>About the agency</h1>
+                   <h3>Welcome to Lian</h3>
+               </div>
+               <img src='images/heading.png' class='heading-image' alt='image'>
+            </section>
+            <section class='story'>
+                <div class='story-item'>
+                    <img src='images/content-story.png' alt='Story' id='story-image'>
                 </div>
-                <img src='images/heading.png' class='heading-image'>
-            </div>
-        </div>
-        
-        <div class='content'>
-            <div class='content-container container'>
-                <div class='story'>
-                    <div class='story-item'>
-                        <img src='images/content-story.png' alt='Story' class='story-image'>
+                <div class='story-item'>
+                    <div class='history'>
+                        <h3>OUR STORY</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.<br><br>
+                        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.
                     </div>
-                    <div class='story-item'>
-                        <div class='story-about'>
-                            <div class='about'>
-                                <h3>OUR STORY</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.
-                                <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem.</p>
-
-                            </div>
-                            <div class='skills'>
-                                <h3>OUR SKILLS</h3>
-                                <p>Photoshop</p>
-                                <div class='progress'>
-                                    <div class='progress-bar progress-bar-90'>
-                                       <span class='dot'><i class='innerDot'></i></span>
-                                       <div class='progress-value'>90%</div>
-                                    </div>
-                                </div>
-                                <p>Branding</p>
-                                <div class='progress'>
-                                    <div class='progress-bar progress-bar-95'>
-                                       <span class='dot'><i class='innerDot'></i></span>
-                                       <div class='progress-value'>95%</div>
-                                    </div>
-                                </div>
-                                <p>Photography</p>
-                                <div class='progress'>
-                                    <div class='progress-bar progress-bar-50'>
-                                       <span class='dot'><i class='innerDot'></i></span>
-                                       <div class='progress-value'>50%</div>
-                                    </div>
-                                </div>
-                                <p>Web Design</p>
-                                <div class='progress'>
-                                    <div class='progress-bar progress-bar-85'>
-                                       <span class='dot'><i class='innerDot'></i></span>
-                                       <div class='progress-value'>85%</div>
-                                    </div>
-                                </div>
+                    <div class='skills'>
+                        <h3>OUR SKILLS</h3>
+                        <p>Photoshop</p>
+                        <div class='progress'>
+                            <div class='progress-bar progress-bar-90'>
+                                <span class='dot'><i class='innerDot'></i></span>
+                                <div class='progress-value'>90%</div>
                             </div>
                         </div>
-                    </div>
+                        <p>Branding</p>
+                        <div class='progress'>
+                            <div class='progress-bar progress-bar-95'>
+                                <span class='dot'><i class='innerDot'></i></span>
+                                <div class='progress-value'>95%</div>
+                            </div>
+                        </div>
+                        <p>Photography</p>
+                        <div class='progress'>
+                            <div class='progress-bar progress-bar-50'>
+                                <span class='dot'><i class='innerDot'></i></span>
+                                <div class='progress-value'>50%</div>
+                            </div>
+                        </div>
+                        <p>Web Design</p>
+                        <div class='progress'>
+                            <div class='progress-bar progress-bar-85'>
+                                <span class='dot'><i class='innerDot'></i></span>
+                                <div class='progress-value'>85%</div>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+            </section>
+            <section class='team'>
+                <h2>Awesome team</h2>
+                <div class='team-title'>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>   
                 </div>
-                <div class='teamPresentation'>
-                        <h2>AWESOME TEAM</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
-                </div>
-                <div class='teamCards'>
+                <div class='team-cards'>
                     <div class='card'>
                         <img src="images/lianJoy.png" alt='Lian_Joy' class='card-photo'>
                         <div class='card-information'>
                             <h3>LIAN JOY</h3>
                             <span>CEO/Founder</span>
-                            <p>Lorem ipsum dolor sit amet, conse ctetuer adipi scing elit, sed diam nonu mmy nibh euis mod tinci </p>
+                            <p>Lorem ipsum dolor sit amet, conse ctetuer adipi scing elit, sed diam nonu mmy nibh euis </p>
                         </div>
                     </div>
                     <div class='card'>
@@ -116,36 +108,36 @@
                         <div class='card-information'>
                             <h3>JENN PEREIRA</h3>
                             <span>CEO/Founder</span>
-                            <p>Lorem ipsum dolor sit amet, conse ctetuer adipi scing elit, sed diam nonu mmy nibh euis mod tinci  dolor sit amet, conse ctetuer adipi scing elit, sed diam nonu mmy nibh euis mod tinci</p>
+                            <p>Lorem ipsum dolor sit amet, conse ctetuer adipi scing elit, sed diam nonu mmy nibh euis mod tinci</p>
                         </div>
                     </div>  
                 </div>
-            </div>
-        </div>
-        
-	    <div class='footer'>
+            </section>
+        </main>
+        <footer>
             <div class='footer-logo'>
                 <a href='index.html'><img src='images/logo.png' alt='LIAN'></a>
             </div>
-            <hr noshade>
+            <hr>
 	        <div class='footer-social'>
-                <a href='https://www.facebook.com/' target='_blank'><i class="fa fa-facebook"></i></a>
-                <a href='https://www.youtube.com' target='_blank'><i class="fa fa-youtube-play"></i></a>
-	            <a href='https://twitter.com' target='_blank'><i class="fa fa-twitter"></i></a>
-	            <a href='https://www.linkedin.com' target='_blank'><i class="fa fa-linkedin"></i></a>
-	            <a href='https://dribbble.com' target='_blank'><i class="fa fa-dribbble"></i></a>
-	            <a href='https://pinterest.com' target='_blank'><i class="fa fa-pinterest-p"></i></a>
-	            <a href='https://www.instagram.com' target='_blank'><i class="fa fa-instagram"></i></a>
+                <a href='https://www.facebook.com/' target='_blank' class="fa fa-facebook"></a>
+                <a href='https://www.google.com' target='_blank' class="fa fa-google-plus"></a>
+	            <a href='https://twitter.com' target='_blank' class="fa fa-twitter"></a>
+	            <a href='https://www.linkedin.com' target='_blank' class="fa fa-linkedin"></a>
+	            <a href='https://dribbble.com' target='_blank' class="fa fa-dribbble"></a>
+	            <a href='https://pinterest.com' target='_blank' class="fa fa-pinterest-p"></a>
+	            <a href='https://www.instagram.com' target='_blank' class="fa fa-instagram"></a>
 	        </div>
-            <hr noshade>
+            <hr>
             <div class='footer-sign'>
-                <p>&#169 2016 <span class=bold>MULTIX THEME</span> BY THEMEFORCES. ALL RIGHTS RESERVED.</p>
+                <p>&#169; 2016 <span>Multix theme</span> by themeforces. All rights reserved.</p>
             </div>
-	    </div>
+       </footer>
 </body>
-<script src='../../Domina/scripts/jquery-3.2.1.min.js'></script>
+<script src='../Venera/JavaScript/Domina/scripts/jquery-3.2.1.min.js'></script>
 <script src='scripts/menu.js'></script>
+<script src='scripts/home.js'></script>
 <script>
-    var m1 = new navigation('#menu1');
+    let m1 = new Navigation('#menu'); 
 </script>
 </html>

@@ -1,11 +1,11 @@
-function gallery(sSelector){
-    var g = this;
-    
+function Gallery(sSelector){
+    const g = this;
+
     g.gallery = $(sSelector);
     
     // 1. Data ===================
     
-    g.pictures       = g.gallery.find('.portfolio-image');
+    g.pictures       = g.gallery.find('.gallery-image');
     g.preview        = g.gallery.find('.preview');
     g.arrowPrev      = g.gallery.find('.arrow-prev');
     g.arrowNext      = g.gallery.find('.arrow-next');
@@ -15,10 +15,12 @@ function gallery(sSelector){
     g.current = 0;
     g.qty     = 10;
     
+   g.previewImage.width(g.previewContent.width() * 0.98);
+    
     // 2. Logic ===================
         
-    g.showPreview = function() {
-        var jqPicture = $(this);
+    g.showPreview          = function() {
+        let jqPicture = $(this);
         g.current = g.pictures.index(jqPicture);
     
         g.showImage(0);
@@ -26,25 +28,36 @@ function gallery(sSelector){
         g.preview.addClass('preview-shown');  
     } 
     
-    g.showPrevious = function() { 
-        g.showImage(gallery.SHIFT_PREVIOUS);
+    g.showPrevious         = function() { 
+        g.showImage(Gallery.SHIFT_PREVIOUS);
     }
 
-    g.showNext = function() {
-        g.showImage(gallery.SHIFT_NEXT);  
+    g.showNext             = function() {
+        g.showImage(Gallery.SHIFT_NEXT);  
     }
     
-    g.showImage = function(iShift) {
+    g.showImage            = function(iShift) {
         g.current += iShift; 
         
-        var jqPicture         = g.pictures.eq(g.current)
+        g.setImagePreviewWidth;
+        
+        let jqPicture         = g.pictures.eq(g.current)
             ,jqSmallPicture   = jqPicture.find('.image')
             ,sSmallPictureSrc = jqSmallPicture.attr('src')
             ,sBigPictureSrc   = sSmallPictureSrc.replace('portfolio_', '');
         
-        g.previewContent.animate(
-            {})
-        g.previewImage.attr('src', sBigPictureSrc);
+        if(g.preview.hasClass('preview-shown')){
+            g.previewImage.fadeOut(500, function() {
+                g.previewImage.attr('src', sBigPictureSrc);
+                g.previewImage.fadeIn(500);
+            });
+            
+            
+        }
+        else {
+            g.previewImage.attr('src', sBigPictureSrc);
+        }
+        
         
         g.arrowPrev
                 .css({'opacity' : 1})
@@ -57,7 +70,7 @@ function gallery(sSelector){
         g.inspectPictureRange(g.current);
   }
     
-    g.inspectPictureRange = function(iCurrent) {
+    g.inspectPictureRange  = function(iCurrent) {
         if(iCurrent == 0) {
             g.arrowPrev
                 .css({'opacity' : 0.3})
@@ -70,11 +83,17 @@ function gallery(sSelector){
         }
     }
     
-    g.closePreview = function(event) {
+    g.closePreview         = (event) => {
         if($(event.target).hasClass('preview')){
             g.preview.removeClass('preview-shown');
         }
     }
+    
+    g.setImagePreviewWidth = function() {
+        g.previewImage.width(g.previewContent.width() * 0.98);
+    }
+    
+    $(window).resize(g.setImagePreviewWidth);
     
     // 3. Events ==================
  
@@ -85,5 +104,6 @@ function gallery(sSelector){
 
 }
 
-gallery.SHIFT_PREVIOUS   = -1;
-gallery.SHIFT_NEXT       = +1;
+Gallery.SHIFT_PREVIOUS   = -1;
+Gallery.SHIFT_NEXT       = +1;
+

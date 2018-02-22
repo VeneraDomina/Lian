@@ -1,0 +1,110 @@
+<!Doctype HTML>
+<html lang='zxx'>
+<head>		
+	<title>LIAN</title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' href='../stylesheets/css/font-awesome.min.css'>
+	<link rel='stylesheet' href='../stylesheets/portfolio.css'>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+</head>
+<body>
+        <header>
+           <div class='logo'>
+               <a href='../index.html'><img src='../images/logo.png' alt='Lian'></a>
+           </div>
+           <nav id='menu'>
+               <a class='touch-menu fa fa-bars'></a>
+               <ul class='menu-list'>
+                   <li class='menu-item'><a href='../index.html'>Home</a></li>
+                   <li class='menu-item'><a href='#'>About</a></li>
+                   <li class='menu-item'><a href='#'>Portfolio</a></li>
+                   <li class='menu-item'><a href='#'>Blog</a></li>
+                   <li class='menu-item'><a href='#'>Contact</a></li>
+                   <li class='menu-item'>
+                       <form action='#' id='search'>
+                           <input type='search' class='search'>
+                           <input type ='submit' value='&#xF002;' style='font-family:Open Sans, FontAwesome'>
+                       </form>
+                   </li>
+               </ul>
+           </nav>
+        </header>
+        <main id='main'>
+            <section class='heading'>
+                <div class='heading-title'>
+                   <h1>Latest projects</h1>
+                   <h3>We deliver quality</h3>
+                   <img src='../images/portfolioHeading.png' class='heading-image' alt='image'>
+               </div>
+            </section>
+            <nav id='menu-content'>
+                <ul class='menu-list'>
+                    <li class='menu-item'><a href='#'>All</a></li>
+                    <li class='menu-item'><div class='menu-separator'>|</div></li>
+                    <li class='menu-item'><a href='#'>Logo</a></li>
+                    <li class='menu-item'><div class='menu-separator'>|</div></li>
+                    <li class='menu-item'><a href='#'>Mobile App</a></li>
+                    <li class='menu-item'><div class='menu-separator'>|</div></li>
+                    <li class='menu-item'><a href='#'>Wordpress</a></li>
+                    <li class='menu-item'><div class='menu-separator'>|</div></li>
+                    <li class='menu-item'><a href='#'>Web design</a></li>
+                    <li class='menu-item'><div class='menu-separator'>|</div></li>
+                    <li class='menu-item'><a href='#'>Ui/Ux</a></li>
+                    <li class='menu-item'><div class='menu-separator'>|</div></li>
+                    <li class='menu-item'><a href='#'>Branding</a></li>
+                </ul>
+                
+            </nav>
+            <section id='gallery'>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_01.png' alt='Image 01'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_02.png' alt='Image 02'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_03.png' alt='Image 03'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_04.png' alt='Image 04'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_05.png' alt='Image 05'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_06.png' alt='Image 06'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_07.png' alt='Image 07'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_08.png' alt='Image 08'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_09.png' alt='Image 09'></div>
+                <div class='fillingEmptySpace'></div>
+                <div class='gallery-image'><img class='image' src='../images/portfolio_10.png' alt='Image 10'></div>
+                <div class='fillingEmptySpace'></div>
+                <div class='preview'>
+                    <div class='preview-content'>
+                        <div class='arrow arrow-prev'>&lt;</div>
+                            <img src='' class='preview-image'>
+                        <div class='arrow arrow-next'>&gt;</div>			
+                    </div>
+                </div>
+                <button id='button'>Load more</button>
+            </section>
+        </main>
+        <footer>
+            <div class='footer-logo'>
+                <a href='../index.html'><img src='../images/logo.png' alt='LIAN'></a>
+            </div>
+            <hr>
+	        <div class='footer-social'>
+                <a href='https://www.facebook.com/' target='_blank' class="fa fa-facebook"></a>
+                <a href='https://www.google.com' target='_blank' class="fa fa-google-plus"></a>
+	            <a href='https://twitter.com' target='_blank' class="fa fa-twitter"></a>
+	            <a href='https://www.linkedin.com' target='_blank' class="fa fa-linkedin"></a>
+	            <a href='https://dribbble.com' target='_blank' class="fa fa-dribbble"></a>
+	            <a href='https://pinterest.com' target='_blank' class="fa fa-pinterest-p"></a>
+	            <a href='https://www.instagram.com' target='_blank' class="fa fa-instagram"></a>
+	        </div>
+            <hr>
+            <div class='footer-sign'>
+                <p>&#169; 2016 <span>Multix theme</span> by themeforces. All rights reserved.</p>
+            </div>
+       </footer>
+</body>
+<script src='../../Venera/JavaScript/Domina/scripts/jquery-3.2.1.min.js'></script>
+<script src='../scripts/menu.js'></script>
+<script src='../scripts/portfolio.js'></script>
+<script src='../scripts/gallery.js'></script>
+<script>
+    let m1 = new Navigation('#menu');
+    let g = new Gallery('#gallery');
+</script>
+</html>

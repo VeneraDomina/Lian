@@ -1,56 +1,55 @@
-function navigation(sSelector){
-    var m = this;
-    
+function Navigation(sSelector) {
+    // Data
+    const m = this;
     m.menu = $(sSelector);
+    const jqTouchMenu = m.menu.find('.touch-menu');
+    const jqSearch = m.menu.find('.search');
+    const jqMenu = m.menu.find('.menu-list');
     
-    // 2. Logic ===================
+    // Logic
     
-    m.showMenu = function() {
-        var jqMenu = m.menu.find('.navigation');
-        var jqIconBar = $(this);
-        
-        if(jqMenu.hasClass('.active')){
-            jqMenu.stop().toggleClass('.active');
-            jqMenu.animate({'right' : '-1500px'}, 1000);
-            jqIconBar.find('.fa-times').removeClass('fa-times').addClass('fa-bars');
-            jqIconBar.css({'position' : 'absolute'});
-            jqIconBar.closest('body').removeClass('lock');
-            m.menu.find('.shadow').hide();
-        }
-        else{
-            jqMenu.stop().toggleClass('.active');
-            jqMenu.animate({'right' : '0px'}, 1000);
-            jqIconBar.closest('body').addClass('lock');
-            jqIconBar.find('.fa-bars').removeClass('fa-bars').addClass('fa-times');
-            jqIconBar.css({'position' : 'fixed'});
-            m.menu.find('.shadow').show();
+    m.showMenu       = () => {
+        if(jqMenu.hasClass('active')){
+            jqMenu.stop().toggleClass('active');
+            jqMenu.slideToggle();
+        } else {
+            jqMenu.toggleClass('active');
+            jqMenu.slideToggle();
         }
     }
     
-    m.openSearch = function() {
-        $(this).css(
-            {'width' : '10em'}
-            ,{'cursor' : 'auto'}
-            ,{'border-color' : '#777777'}
-            ,{'font-size' : '14px'}
+    m.openSearch     = () => {
+        jqSearch.css(
+            {'width' : '120px'}
         );
     }
     
-    m.closeSearch = function() {
+    m.closeSearch    = () => {
+        jqSearch.css(
+            {'width' : '16px'}
+        );
+    }
+    
+    m.checkMenuStyle = () => {
         
-        if(!$(this).val()){
-            $(this).css(
-            {'width' : '2em'}
-            ,{'cursor' : 'pointer'}
-            ,{'border-color' : '#ffffff'}
-            ,{'font-size' : '1.6em'}
-            );
+        if($(window).innerWidth() > 768 ){
+            jqMenu.css({'display' : 'flex'});
+            
+            if(jqMenu.hasClass('active')) jqMenu.removeClass('active');
+        } else if (jqMenu.hasClass('active')) {
+            jqMenu.css({'display' : 'block'});
+        } else {
+           jqMenu.css({'display' : 'none'});
         }
     }
     
-    // 3. Events ==================
- 
-    m.menu.find('.menu-link').click(m.showMenu);
-    m.menu.find('.search-field').focusin(m.openSearch);
-    m.menu.find('.search-field').focusout(m.closeSearch);
-}
+    $(window).resize(m.checkMenuStyle);
+
+    //Events
+    
+    jqTouchMenu.click(m.showMenu);
+    jqSearch.focusin(m.openSearch);
+    jqSearch.focusout(m.closeSearch);
+}    
+
+    

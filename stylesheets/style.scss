@@ -1,0 +1,357 @@
+@import 'general';
+@import 'mixins';
+@import 'header';
+@import 'footer';
+
+
+
+header {
+    ul {
+        li:first-child a { color: #000000; }
+        li:first-child::before { 
+            display: inline-block; 
+            background: #000;
+        }
+    }
+}
+
+main {
+    background-color: #fafafa;
+    box-shadow:  inset 0 -7px 7px -7px rgba(0,0,0,0.1);
+    
+    .heading {
+        background: linear-gradient(to right, #bfbfbf 0%, #fcfcfd 60%, #fcfcfd 100%);
+        box-shadow: inset 0 7px 7px -7px rgba(0,0,0,0.3);
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+
+        .heading-title {
+            max-width: 1140px;
+            margin: 114px auto 0;
+
+            h3 {
+                margin-top: 44px;
+            }
+        }
+
+        .heading-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    
+    .story {
+        @include flexbox();
+        @include justify-content(space-between);
+        max-width: 1140px;
+        margin: 0 auto;
+        padding-top: 72px;
+        padding-bottom: 100px;
+        
+        .story-item:first-child {
+            @include flex-basis(46.3%);
+        
+            img {
+                max-width: 100%;
+                min-width: 325px;
+                height: auto;
+            }
+        }
+    
+        .story-item:last-child {
+            @include flex-basis(48.95%);
+            height: auto;
+            
+            .history {
+                min-width: 325px;
+                
+                h3 {
+                    padding: 9px 0 44px 0;  
+                }
+            }
+            
+            .skills {
+                h3 {
+                    padding: 35px 0 43px 0;
+                } 
+                
+                p {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #000;
+                    line-height: 1;
+                }
+                
+                .progress{
+                    height: 14px;
+                    background: #ebebeb;
+                    width: 98%;
+                    margin-top: 14px;
+                    margin-bottom: 20px;
+                    
+                    .progress-bar{
+                        background: #a1a1a1;
+                        height: 4px;
+                        position: relative;
+                        top: 5px;
+                    }
+                    
+                    .dot{
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 50%;
+                        background-color: #000000;
+                        position: absolute;
+                        right: -7px;
+                        top: -5px;
+                    }
+                    
+                    .innerDot{
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background-color: #ffffff;
+                        position: absolute;
+                        left: 4.5px;
+                        top: 4.5px;
+                    }
+                    
+                    .progress-value{
+                        color: #fff;
+                        background: #041608;
+                        padding: 5px;
+                        position: absolute;
+                        bottom: 16px;
+                        right: -25px;
+                    }
+                    
+                    .progress-bar-90{
+                        width: 90%;
+                    }
+
+                    .progress-bar-95{
+                        width: 95%;
+                    }
+
+                    .progress-bar-50{
+                        width: 50%;
+                    }
+
+                    .progress-bar-85{
+                        width: 85%;
+
+                    }
+                }
+       
+            } 
+            
+        }
+  
+    }
+    
+    .team {
+        max-width: 1140px;
+        margin: 0 auto;
+        
+        .team-title {
+            @include flexbox();
+            @include justify-content(center);
+            text-align: center;
+            
+            p {
+                max-width: 610px;
+            }
+        }
+        
+        .team-cards {
+            @include flexbox();
+            @include justify-content(space-between);
+            padding-top: 66px;
+            padding-bottom: 40px;
+            width: 100%;
+            
+            .card {
+                max-width: 31%;
+                min-width: 280px;
+                margin-bottom: 36px;
+                background-color: #fff;
+                
+                .card-information {
+                    padding: 35px 28px 30px 26px;
+                    
+                    span {
+                        padding: 12px 0 17px 0; 
+                        display: block;
+                        font-family: 'RobotoBold', 'Open Sans', sans-serif;
+                        font-size: 16px;
+                        color: $font-color;
+                    }
+                }
+                
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 1000px) {
+     main {
+        .story {
+            .story-item:first-child {
+                @include align-self(center);
+            }
+         }
+    }
+}
+@media screen and (max-width: 1024px) {
+    main {
+        .story {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            
+            .story-item:last-child {
+                .history h3 {
+                    padding-bottom: 20px;
+                }
+                .skills h3 {
+                    padding: 25px 0 20px 0;
+                }
+            }
+        }   
+    }
+}
+@media screen and (max-width: 1023px) {
+    main {
+        .heading {
+            background: #bfbfbf;
+            .heading-image {
+                display: none;
+            } 
+        }
+    }
+}
+@media screen and (max-width: 875px) {
+    main {
+        .team {
+            .team-cards {
+                @include flex-wrap(wrap);
+                @include justify-content(space-around);
+                .card {
+                    min-width: 358px;
+                }
+            }
+        }
+        .story {
+            position: relative;
+            height: 750px;
+            
+            .story-item:last-child {
+                .history {
+                    margin-right: 5px;
+                }
+            
+                .skills {
+                    position: absolute;
+                    bottom: 0;
+                    left: 10px;
+                    width: 98%;
+                    margin-bottom: 40px;
+
+                    h3 {
+                        padding-bottom:  35px;
+                    } 
+                }
+            }
+        }  
+    }
+}
+@media screen and (max-width: 768px) {  
+    header {
+        ul {
+            li:first-child::before { display: none; }
+        }    
+    }
+    
+    main {
+        .heading {
+            height: 250px;
+            
+            .heading-title {
+                margin-top: 64px; 
+            }
+        }  
+        .story {
+            height: 715px;
+        }
+    }
+
+    
+}
+@media screen and (max-width: 680px) {
+    main {
+        .story {
+            display: block;
+            height: auto;
+            padding-bottom: 20px;
+            
+            .story-item:first-child {
+                text-align: center;
+                
+                img {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+            }
+            .story-item:last-child {
+                margin: 0 10px;
+                
+                .skills {
+                    position: static;
+                    width: 100%;
+                    
+                    h3 {
+                        padding-top: 35px;
+                    }
+                }
+            }
+        }
+        .team {
+            h2 {
+                padding-bottom: 25px;
+            }
+            .team-cards {
+                padding-top: 40px;
+            }
+        }
+    } 
+    footer {
+        .footer-logo {
+            margin: 30px auto;
+        }
+        .footer-sign {
+            margin: 10px 0;
+            
+            p {
+                font-size: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 414px) {
+    main {
+        h2 {
+            font-size: 18px;
+        }
+        .team {
+            .team-cards {
+                .card { 
+                    min-width: 100%; 
+                }
+            }
+        }
+    }
+}
