@@ -103,6 +103,11 @@ header {
 
 @media screen and (max-width: 768px) {
     header {
+        
+        .logo {
+            padding-left: 10px;
+        }
+        
         height: 60px;
         .touch-menu {
             display: block;
@@ -119,7 +124,7 @@ header {
             
             li {
                 text-align: left;
-                padding: 15px 0;
+                padding-left: 0;
                 border-bottom: 1px solid $font-color;
                 border-left: 5px solid #fff;
                 
@@ -131,6 +136,11 @@ header {
                     position: static;
                     display: inline-block;
                     margin-left: -30px;
+                }
+                
+                a {
+                    display: block;
+                    padding: 15px 10px;
                 }
             }
             
@@ -144,6 +154,9 @@ header {
             
             li:hover {
                 border-color: $font-color;
+            }
+            li:not(:last-child)::before {
+                display: none;
             }
         }    
     }
