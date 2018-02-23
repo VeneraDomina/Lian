@@ -87,7 +87,7 @@ header {
     display: none; }
   header nav {
     flex-basis: 51.5%; }
-git  header ul {
+  header ul {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -166,6 +166,8 @@ git  header ul {
 @media screen and (max-width: 768px) {
   header {
     height: 60px; }
+    header .logo {
+      padding-left: 10px; }
     header .touch-menu {
       display: block; }
     header ul {
@@ -178,7 +180,7 @@ git  header ul {
       width: 100%; }
       header ul li {
         text-align: left;
-        padding: 15px 0;
+        padding-left: 0;
         border-bottom: 1px solid #777777;
         border-left: 5px solid #fff; }
         header ul li input[type=search] {
@@ -187,12 +189,17 @@ git  header ul {
           position: static;
           display: inline-block;
           margin-left: -30px; }
+        header ul li a {
+          display: block;
+          padding: 15px 10px; }
       header ul li:first-child {
         padding-left: 0; }
       header ul li:last-child {
         padding: 7px 0; }
       header ul li:hover {
-        border-color: #777777; } }
+        border-color: #777777; }
+      header ul li:not(:last-child)::before {
+        display: none; } }
 footer .footer-logo {
   text-align: center;
   margin: 63px 0 46px 0; }
@@ -453,6 +460,8 @@ main {
     height: 250px; }
     main .heading .heading-title {
       margin-top: 64px; }
+      main .heading .heading-title h3 {
+        padding-left: 10px; }
   main .story {
     height: 715px; } }
 @media screen and (max-width: 680px) {
