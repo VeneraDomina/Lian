@@ -32,7 +32,7 @@ function Navigation(sSelector) {
     
     m.checkMenuStyle = () => {
         
-        if($(window).innerWidth() > 768 ){
+        if($(window).outerWidth() > 768) {
             jqMenu.css({'display' : 'flex'});
             
             if(jqMenu.hasClass('active')) jqMenu.removeClass('active');
