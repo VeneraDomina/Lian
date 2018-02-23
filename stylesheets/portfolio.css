@@ -3,6 +3,7 @@
   padding: 0; }
 
 body {
+  width: 100%;
   min-width: 360px; }
 
 @font-face {
